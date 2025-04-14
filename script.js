@@ -24,9 +24,9 @@ function wishMe(){
         speak("Good Evening Sir")
     }
 }
-// window.addEventListener('load',()=>{
-   //  wishMe()
- //})
+ window.addEventListener('load',()=>{
+     wishMe()
+ })
 let speechRecognition= window.SpeechRecognition || window.webkitSpeechRecognition 
 let recognition =new speechRecognition()
 recognition.onresult=(event)=>{
@@ -46,11 +46,15 @@ function takeCommand(message){
     btn.style.display="flex"
     voice.style.display="none"
     if(message.includes("hello")||message.includes("hey")){
-        speak("hello sir,what can i help you?")
+        speak("hello sir, How can i help you?")
     }
     else if(message.includes("who are you")){
         speak("i am virtual assistant, created by aamir sir and bhavya ma'am")
-    }else if(message.includes("open youtube")){
+    }    
+    else if(message.includes("how are you")){
+            speak(" i am well, hope you also feel good")    
+    }
+    else if(message.includes("open youtube")){
         speak("opening youtube...")
         window.open("https://youtube.com/","_blank")
     }
